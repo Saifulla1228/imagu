@@ -1,0 +1,281 @@
+ 
+ @font-face {
+     font-family: Dhivehi;
+     src: url(fonts/Mv_Elaaf_Normal.otf);
+     font-weight: 800;
+ }
+ @font-face {
+    font-family: Dhivehi;
+    src: url(fonts/MVWaheed.otf);
+    font-weight: 400;
+}
+.dhivehi_text{
+    font-family: dhivehi;
+    direction: rtl;
+}
+ 
+body{
+    font-family: 'KoHo', sans-serif;
+            margin: 0px;
+        }
+#main img {
+   
+   
+    margin-top: 20px;
+    width: 100px;
+}
+ 
+#small {
+    text-align: center;
+    text-transform: uppercase;
+
+
+}
+h4 {
+    text-transform: uppercase; 
+    font-size: 16px;
+     text-align: left;
+}
+p{
+    text-align: justify;
+    margin-top: 20px;
+}
+ #imagu{
+     font: weight 500px;
+     font-size: 54px;
+     margin: 5px;
+     color:rgb(6, 6, 100);
+
+ }
+ #year{
+     color: rgb(2, 2, 39);
+     font-size: 15px;
+     margin: 0px;
+     font-style: italic;
+ }
+ #title{
+     color: white;
+     background: rgb(21, 6, 235);
+     padding: 10px;
+     width: 350px;
+     margin: auto;     
+     border-radius: 12px;
+     animation-name: colordance;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate-reverse;
+ }
+ #main{
+     text-align: center;
+     background: linear-gradient(rgb(245, 140, 3), rgba(71, 94, 223, 0.5)), url(img/1.jpg);
+     padding-bottom: 50px;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+ }
+ #content{
+     width: 1200px;
+     margin: auto;
+     margin-top: 60px;
+     
+ }
+ #foot{
+     text-align: center;
+     background-color: rgb(79, 79, 79);
+     padding: 20px;
+     margin: auto;
+ }
+ .white{
+     color: white;
+ }
+ .footer-icon{
+     margin-right: 10px;
+     margin-left: 10px;
+ }
+ nav ul{
+     list-style: none;
+ }
+ nav ul li a{
+     text-transform: uppercase;
+     color: black;
+     font-size: 16px;
+     font-weight: 800;
+     text-decoration: none;
+   
+ }
+ nav ul li{
+     display: inline-block;
+     margin-right: 10px;
+     margin-left: 10px;
+     mask-position: left;
+      
+ }
+ header{
+     position: absolute;
+     top:30px;
+     left:0px;
+     right: 0px;
+     width: 1200px;
+     height: 250px;
+     margin: auto;
+      
+ }
+ header nav{
+     display: inline-block;
+      margin-top: 0px;
+      float: right;
+   
+ 
+  
+ }
+
+ @keyframes colordance {
+     0%{
+         color:yellow;
+     }
+     50%{
+         color: violet;
+     }
+     75%{
+         color: royalblue;
+     }
+     100%{
+         color:tomato;
+     }
+ }
+  .thumnail img{
+      width: 350px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 30px;
+     
+      object-position: right;
+      transition-property:all;
+      transition-duration: 0.4s;
+  }
+  .thumnail:hover img{
+        color: red;
+        border-radius: 0px;
+        object-position: left;
+        width: 250px;
+        height: 150px;
+
+   
+        
+
+       
+  }
+  .thumnail h2{
+      font-size: 16px;
+      margin: 5px 0;
+      text-transform: uppercase;
+  }
+
+  .thumnail:hover h2{
+    color: red;
+}
+  .thumnail h3{
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: 300px;
+}
+.thumnail p {
+    font-size: 12px;
+    
+}
+.thumnail{
+     
+    display: inline-block;
+    width: 350px;
+    margin: 10px;
+}
+
+
+#page-title{
+    text-transform:uppercase;
+    text-align: center;
+    color: rgb(160, 8, 8);
+    margin-bottom: 30px;
+    margin-top: 0px;
+   
+    animation-name: mymove;
+    animation-duration: 5s;
+ 
+    padding-top: 10px;
+    font-size: 45px;
+   
+ 
+}
+ @media  (max-width: 1200px) {
+     header,
+     #content{
+         width: 100%;
+         padding-right: 20px;
+         padding-left: 20px;
+         box-sizing: border-box;
+    }
+ }
+    
+ 
+@media (max-width: 768px) {
+       .thumnail{
+           display: block;
+           margin: auto;
+           
+       }
+}
+
+ .article h2{
+     font-size: 40px;
+     font-weight: 700;
+ }
+ .article p{
+    font-size: 20px;
+    line-height: 35px;
+}
+.article img{
+    object-fit: cover;
+    border-radius: 20px;
+}
+ #mobile-menu{
+     float:right
+ }
+ @media (min-width:768px) {
+     #mobile-menu{
+         display: none;
+     }
+ }
+ @media (max-width:768px) {
+     header nav{
+         position:fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 100%;
+         background-color: rgb(12, 177, 199);
+         transition: all 1s;
+         padding-top: 200px;   
+         text-align: center; 
+         overflow: hidden;
+         z-index: 99999;
+     }
+
+     header nav.open{
+         right: 0;
+     }
+    nav ul li {
+    display:block
+        }
+    nav a {
+    font-size: 35px;   
+    }
+    #mobile-menu{
+    position: fixed;
+    right: 25px;
+    z-index: 99999;
+    }
+}
+
+.bx-wrapper{
+    direction: ltr;
+}
