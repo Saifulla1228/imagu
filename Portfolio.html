@@ -86,8 +86,10 @@
                     :alt="`${image}.jpg`" :src="`img/portfolio/${image}.jpg`">
                 <div class="flex space-x-3">
                     <template x-for="i in [...Array(5).keys()]">
-                        <i :class="{'text-gray-500' : image == i}"
-                            class="fa fa-circle text-xs hover:text-gray-500 cursor-pointer" @click="image = i"></i>
+                        <!-- <i :class="{'text-gray-500' : image == i}" class="fa fa-circle text-xs hover:text-gray-500 cursor-pointer" @click="image = i"></i> -->
+                        <img :class="{'shadow-lg border-yellow-400' : image == i}"
+                            class="border-4 border-transparent cursor-pointer" :src="`img/portfolio/${i}.jpg`"
+                            :alt="`${i}.jpg`" @click="image = i" width="100px">
                     </template>
                 </div>
             </div>
