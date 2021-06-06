@@ -1,88 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMAGU  </title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@400;500&family=Pattaya&family=Roboto:ital,wght@1,100;1,700&display=swap" rel="stylesheet">
+    <title>IMAGU </title>
     <script src="https://kit.fontawesome.com/ef2ed5ed9f.js" crossorigin="anonymous"></script>
-
-   
-    <link rel="stylesheet" href="style.css">
-     
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body >
-    <header> 
-        
-    <nav>
-         
-        <ul>
-            <li> <a href="#">HOME</a> </li>
-            <li> <a href="about-us.html">ABOUT US</a> </li>
-            <li> <a href="Portfolio.html">Portfolio</a> </li>
-            
-                 </ul>
-                 </nav>
-                 <i id="mobile-menu"  class="fas fa-bars fa-3x"></i>
-    </header>
-    <section id="main"> 
-        
-        <img src="img/imagu logo.png"   alt="">
-        <h2 id="imagu"> IMAGU</h2> 
-        <h1 id="year">Since 1996</h1>
-        <h3 id="title">IHAVANDHOO MASVERING GULHUN</h3>
-    </section>
 
-    <section id="content">
+<body class="text-gray-700">
 
-        <h4 >Our vision</h4>
-       <p>Our work aims to break the vicious cycle of poverty and social isolation and to restore hope for a better future. We believe that every person has the right to access resources and opportunities in order to live and develop with dignity and to become an active and contributing member of our society.</p>
-        
-           <h4>Our Mission </h4>
-            <p>
-                About IMAGU
-               IMAGU was established in January 1996 to provide emergency assistance in the countries of the former Yugoslavia. Since then, adhering to the concept of “psycho-social and self-reliance support,” JEN has been consistently in charge of offering support activities to those people who have been stricken with hardship due to conflicts and disasters across the globe, in every phase of recovery from emergency assistance to reconstruction.
-                
-                
-                JEN became a non-profit organization in 2000, opening its headquarters in Shinjuku, Tokyo. Authorized by the National Tax Agency on September 1,2005, JEN offers assistance activities in Afghanistan, Iraq, Sri Lanka, Pakistan, Tohoku, Kumamoto and Jordan (for Syrian Refugees), as of October 2016.
-                
-                <b></b> Mission and vision
-                Our mission
-                We put our utmost efforts into restoring a self-supporting livelihood both economically and mentally to those people who have been stricken with hardship due to conflicts and disasters. We do so promptly, precisely, and flexibly by fully utilizing local human and material resources, considering this the most promising way to revitalize the society.
-                
-                Furthermore, we also try to convey victims’ sufferings and their efforts to overcome such sufferings along with their hopes and desires to the rest of the world so that the value of peace is seen in a new light and is shared by people everywhere.</p>        
-        <h4> Purpose</h4>
-        <p> Globalization during the 20th century gave rise to the importance of NGOs. Many problems could not be solved within a nation. International treaties and international organizations such as the World Trade Organization were seen as too focused on the interests of capitalist enterprises. In an attempt to counterbalance this trend, NGOs have evolved to emphasize humanitarian issues, developmental aid, and sustainable development. A prominent example of this is the World Social Forum which is a rival convention to the World Economic Forum held annually in January in Davos, Switzerland. The fifth World Social Forum in Porto Alegre, Brazil, in January 2005 was attended by representatives from more than 1,000 NGOs.4</p>
-    </section>
+    <!-- Navbar -->
+    <div x-data="{ isOpen: false }"
+        class="sticky top-0 z-50 lg:px-32 lg:h-auto w-full bg-white border-b shadow-sm md:shadow flex flex-col lg:flex-row justify-between lg:justify-start items-center">
 
-    <footer id="foot" >
-        <a class="footer-icon" href="mailto: Saifulla1228@gmail.com" target="_blank">
-            <i class="fas fa-envelope white fa-lg"></i>
-        </a>
-        <a class="footer-icon" href="https://www.facebook.com/IMAGUjamiyya" target="_blank">
-            <i class="fab fa-facebook-square white fa-lg"></i>
-        </a>
-        <a class="footer-icon" href="viber://forward?text=I'm Saifulla" target="_blank">
-            <i class="fab fa-viber white fa-lg"></i>
-        </a>
-    <a class="footer-icon" href="https://twitter.com/Ahmed97086352" target="_blank">
-        <i class="fab fa-twitter white fa-lg"></i>
-    </a>
-      
+        <!-- Navs -->
+        <div class="w-full flex justify-between items-center lg:flex-grow-0 px-8">
+
+            <!-- logo -->
+            <h1 class="py-4 font-semibold flex-shrink-0">
+                <a class="flex space-x-2 items-center lg:text-xl" href="index.html">
+                    <img class="h-8 w-8 object-cover object-center" src="img/logo.png" alt="">
+                    <span>IMAGU</span>
+                </a>
+            </h1>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button @click="isOpen = !isOpen" class="lg:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Menus-->
+        <div :class="{ 'hidden lg:flex' : !isOpen }" @click.away="isOpen = false"
+            class="shadow-xl lg:shadow-none lg:relative z-50 w-full lg:w-auto flex flex-col lg:flex-row lg:justify-start lg:items-center flex-shrink-0 w-full bg-white">
+
+            <!-- right menu / mobile dropdown  -->
+            <div class="flex flex-col lg:flex-row lg:space-x-8">
+                <a :class="{ 'text-yellow-600': location.pathname.match('index.html')}"
+                    class="py-4 px-8 lg:px-0 font-medium text-gray-600" href="index.html">Home</a>
+                <a :class="{ 'text-yellow-600': location.pathname.match('portfolio.html')}"
+                    class="py-4 px-8 lg:px-0 font-medium text-gray-600" href="portfolio.html">Portfolio</a>
+                <a :class="{ 'text-yellow-600': location.pathname.match('about-us.html')}"
+                    class="py-4 px-8 lg:px-0  font-medium text-gray-600" href="about-us.html">About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="m-4 lg:mx-32 lg:my-6 space-y-16">
+        <section class="text-gray-600 body-font">
+            <div class="container mx-auto flex px-5 items-center justify-center flex-col">
+                <img class="lg:w-1/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+                    src="img/logo.png">
+                <div class="text-center lg:w-2/3 w-full">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Ihavandhoo Masveringe
+                        Gulhun
+                    </h1>
+                    <p class="mb-8 leading-relaxed">
+                        Our work aims to break the vicious cycle of poverty and social isolation
+                        and to restore hope for a better
+                        future. We believe that every person has the right to access resources and opportunities in
+                        order to
+                        live
+                        and develop with dignity and to become an active and contributing member of our society.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="portfolio.html"
+                            class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                            Portfolio
+                        </a>
+                        <a href="about-us.html"
+                            class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                            About Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container mx-auto flex px-5 md:flex-row flex-col items-center">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                    <img class="object-cover object-center rounded" alt="hero" src="img/bg/12.png">
+                </div>
+                <div
+                    class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center lg:text-center">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                        Our Mission
+                    </h1>
+                    <p class="mb-8 leading-relaxed">
+
+                        Adhering to the concept of “psycho-social and self-reliance support,” JEN has been consistently
+                        in charge of offering support activities to those people who have been stricken with hardship
+                        due to conflicts and disasters across the globe, in every phase of recovery from emergency
+                        assistance to reconstruction.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container mx-auto flex px-5 md:flex-row flex-col items-center">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                    <img class="object-cover object-center rounded" alt="hero" src="img/1.jpg">
+                </div>
+                <div
+                    class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center lg:text-center">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                        Purpose
+                    </h1>
+                    <p class="mb-8 leading-relaxed">
+                        Globalization during the 20th century gave rise to the importance of NGOs. Many problems could
+                        not
+                        be solved
+                        within a nation. International treaties and international organizations such as the World Trade
+                        Organization
+                        were seen as too focused on the interests of capitalist enterprises. In an attempt to
+                        counterbalance
+                        this
+                        trend, NGOs have evolved to emphasize humanitarian issues, developmental aid, and sustainable
+                        development. A
+                        prominent example of this is the World Social Forum which is a rival convention to the World
+                        Economic Forum
+                        held annually in January in Davos, Switzerland. The fifth World Social Forum in Porto Alegre,
+                        Brazil, in
+                        January 2005 was attended by representatives from more than 1,000 NGOs.4
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-700 text-gray-100 flex flex-col justify-center items-center py-4 space-y-4">
+        <span>
+            Find Us Elsewhere:
+        </span>
+        <div class="space-x-8">
+            <a class="hover:text-red-400" href="mailto: Saifulla1228@gmail.com" target="_blank">
+                <i class="fas fa-envelope fa-lg"></i>
+            </a>
+            <a class="hover:text-blue-500" href="https://www.facebook.com/IMAGUjamiyya" target="_blank">
+                <i class="fab fa-facebook-square fa-lg"></i>
+            </a>
+            <a class="hover:text-indigo-400" href="viber://forward?text=I'm Saifulla" target="_blank">
+                <i class="fab fa-viber fa-lg"></i>
+            </a>
+            <a class="hover:text-blue-400" href="https://twitter.com/Ahmed97086352" target="_blank">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+        </div>
     </footer>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script>
-        $(document).ready(function(){
-          $('.slider').bxSlider();
-        });
-      </script>
-    <script type="text/javascript" src="script.js" ></script>
-  
 
-     
 </body>
+
 </html>
